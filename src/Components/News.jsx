@@ -6,9 +6,10 @@ export default function News({ category }) {
   let [page, setPage] = useState(1);
   let [totalResults, setTotalResults] = useState(0);
   let [loading, setLoading] = useState(false);
+  const apikey = '59724f12cb7a483580cb6945f53e9560';
   const nextnews = async () => {
     setPage(++page);
-    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=59724f12cb7a483580cb6945f53e9560&page=${page}&pageSize=18`;
+    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apikey}&page=${page}&pageSize=18`;
     setLoading(true);
     let response = await fetch(url);
     let resdata = await response.json();
@@ -19,7 +20,7 @@ export default function News({ category }) {
   const previousnews = async () => {
     setPage(--page);
     setLoading(true);
-    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=59724f12cb7a483580cb6945f53e9560&page=${page}&pageSize=18`;
+    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apikey}&page=${page}&pageSize=18`;
     const response = await fetch(url);
     const resdata = await response.json();
     setLoading(false);
@@ -27,7 +28,8 @@ export default function News({ category }) {
   }
   const fetchdata = useCallback(async () => {
     setLoading(true);
-    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=59724f12cb7a483580cb6945f53e9560&page=${page}&pageSize=18`;
+    setPage(1)
+    const url = `https://newsapi.org/v2/top-headlines?country=in&category=${category}&apiKey=${apikey}&page=${page}&pageSize=18`;
     const response = await fetch(url);
     const resdata = await response.json();
     setLoading(false);
@@ -48,7 +50,7 @@ export default function News({ category }) {
           data.map((element) => {
             return <div id='card' className='flex w-[300px] h-[400px] flex-col lg:flex-row lg:w-[350px] lg:h-[150px] shadow-lg shadow-black rounded-b-lg rounded-t-lg overflow-hidden' key={element.url}>
               <div className='h-[250px]  overflow-hidden lg:flex-1 lg:h-auto flex'>
-                <img src={element.urlToImage ?? 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/2048px-No_image_available.svg.png'} alt="" className="object-cover w-full h-full flex-1" />
+                <img src={element.urlToImage ?? 'https://truehopperswp.com/images/no_image_available.png'} alt="" className="object-cover w-full h-full flex-1" />
               </div>
               <div className='p-4 lg:flex-[2] flex flex-col gap-1 bg-white flex-1 justify-around lg:px-4'>
                 <div className='flex flex-col gap-1'>

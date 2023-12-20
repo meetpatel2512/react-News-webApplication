@@ -9,13 +9,13 @@ export default function Navbar() {
             </div>
             <ul className='py-5 flex md:justify-center border-b-2 border-t-2 border-slate-400 overflow-x-scroll lg:overflow-auto px-5'>
                 <li className=' flex gap-7'>
-                    <NavLink to="/" className='text-black capitalize'>home</NavLink>
-                    <NavLink to="/business" className='text-black capitalize'>business</NavLink>
-                    <NavLink to="/entertainment" className='text-black capitalize'>entertainment</NavLink>
-                    <NavLink to="/health" className='text-black capitalize'>health</NavLink>
-                    <NavLink to="/science" className='text-black capitalize'>science</NavLink>
-                    <NavLink to="/sports" className='text-black capitalize'>sports</NavLink>
-                    <NavLink to="/technology" className='text-black capitalize'>technology</NavLink>
+                    <NavLink to="/" className={({ isActive }) => `${isActive ? "text-red-500 capitalize" : "text-black capitalize"}`}>home</NavLink>
+                    <NavLink to="/business" className={({ isActive }) => `${isActive ? "text-red-500 capitalize" : "text-black capitalize"}`}>business</NavLink>
+                    <NavLink to="/entertainment" className={({ isActive }) => `${isActive ? "text-red-500 capitalize" : "text-black capitalize"}`}>entertainment</NavLink>
+                    <NavLink to="/health" className={({ isActive }) => `${isActive ? "text-red-500 capitalize" : "text-black capitalize"}`}>health</NavLink>
+                    <NavLink to="/science" className={({ isActive }) => `${isActive ? "text-red-500 capitalize" : "text-black capitalize"}`}>science</NavLink>
+                    <NavLink to="/sports" className={({ isActive }) => `${isActive ? "text-red-500 capitalize" : "text-black capitalize"}`}>sports</NavLink>
+                    <NavLink to="/technology" className={({ isActive }) => `${isActive ? "text-red-500 capitalize" : "text-black capitalize"}`}>technology</NavLink>
 
                 </li>
             </ul>
